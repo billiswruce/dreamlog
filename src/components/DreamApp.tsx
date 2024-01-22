@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ShowDream } from "./ShowDream";
 import { Dream } from "../models/Dream";
+import { AddDream } from "./AddDream";
 
 //MAIN COMPONENT
 export const DreamApp = () => {
@@ -22,20 +23,21 @@ export const DreamApp = () => {
     );
   };
 
-  const addDream = (theNewDream: string) => {
+  const addANewDream = (theNewDream: string) => {
     setDreams([...dreams, new Dream(0, theNewDream, false)]);
   };
 
   return (
     <>
       <h1>DREAMLOG</h1>
-      <button
+      <AddDream addDream={addANewDream} />
+      {/* <button
         onClick={() => {
           addDream("");
         }}
       >
         Add Dream
-      </button>
+      </button> */}
       {dreams.map((dream) => {
         return (
           <ShowDream
