@@ -4,25 +4,24 @@ import { Dream } from "../models/Dream";
 //återanvändbar komponent
 interface IShowDreamProps {
   dream: Dream;
-  handleCheckbox: () => void;
+  dreamChecked: (name: string) => void;
 }
 
 export const ShowDream = (props: IShowDreamProps) => {
-  const handleClick = () => {};
+  const handleClick = () => {
+    props.dreamChecked(props.dream.name);
+  };
+
+  const addDream = () => {};
 
   return (
     <>
       <h2>Dreams</h2>
-      <h4>
-        <input
-          type="checkbox"
-          checked={props.dream.isfulFilled}
-          onChange={props.handleCheckbox}
-        />
-        {props.dream.name}{" "}
+      <h4 className={props.dream.isFulFilled ? "isFulFilled" : ""}>
+        {props.dream.name}
       </h4>
-      <button onClick={handleClick}>Remove Dream</button>
-      <button>Add New Dream</button>
+      <button onClick={handleClick}>Dream DONE!</button>
+      <button>Ta bort Dröm</button>
     </>
   );
 };
