@@ -10,6 +10,7 @@ export const DreamApp = () => {
     new Dream(2, " Bli bra på kod", false),
     new Dream(3, " Lära mig Sticka", false),
     new Dream(4, " Lära mig Spanska", false),
+    new Dream(5, " Bo i Japan", true),
   ]);
 
   const dreamChecked = (name: string) => {
@@ -32,15 +33,13 @@ export const DreamApp = () => {
     <>
       <h1>DREAMLOG</h1>
       <AddDream addDream={addANewDream} />
-      {dreams.map((dream) => {
-        return (
-          <ShowDream
-            dreamChecked={dreamChecked}
-            dream={dream}
-            key={dream.name}
-          />
-        );
-      })}
+      <ul>
+        {dreams.map((dream) => (
+          <li key={dream.name}>
+            <ShowDream dreamChecked={dreamChecked} dream={dream} />
+          </li>
+        ))}
+      </ul>
     </>
   );
 };

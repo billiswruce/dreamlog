@@ -15,8 +15,18 @@ input[type="checkbox"] {
 input[type="text"] {
   width: 210px;
   height: 28px;
+  font-size: large;
 }
 
 button {
   margin-left: 10px;
+}
+
+.isFulFilled {
+  text-decoration: line-through;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
