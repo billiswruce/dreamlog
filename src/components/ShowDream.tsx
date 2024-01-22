@@ -3,8 +3,6 @@ import { Dream } from "../models/Dream";
 
 //underkomponent till DreamlogApp.tsx
 export const ShowDream = () => {
-  const [dream, setDream] = useState(new Dream(1, " Tågluff i Europa", false));
-
   const handleClick = () => {
     setDream({ ...dream, isfulFilled: false });
   };
