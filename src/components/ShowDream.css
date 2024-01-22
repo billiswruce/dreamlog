@@ -1,3 +1,9 @@
+.container {
+  border: 8px solid rgb(49, 129, 220);
+  padding: 50px 80px;
+  border-radius: 10%;
+}
+
 .dream-container {
   display: flex;
   justify-content: space-between;
@@ -16,6 +22,8 @@ input[type="text"] {
   width: 210px;
   height: 28px;
   font-size: large;
+  border-radius: 3px;
+  box-shadow: none !important;
 }
 
 button {
