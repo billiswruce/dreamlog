@@ -7,6 +7,7 @@ import "./ShowDream.css";
 interface IShowDreamProps {
   dream: Dream;
   dreamChecked: (name: string) => void;
+  removeDream: (name: string) => void;
 }
 
 export const ShowDream = (props: IShowDreamProps) => {
@@ -26,7 +27,9 @@ export const ShowDream = (props: IShowDreamProps) => {
           {props.dream.name}
         </h3>
 
-        <button>Move on!</button>
+        <button onClick={() => props.removeDream(props.dream.name)}>
+          Move on!
+        </button>
       </div>
     </>
   );
