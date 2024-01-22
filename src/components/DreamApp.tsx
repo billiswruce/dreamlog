@@ -10,10 +10,6 @@ export const DreamApp = () => {
     new Dream(3, "Lära mig Sticka", false),
   ]);
 
-  // const handleClick = () => {
-  //   setDream({ ...dream, isfulFilled: false });
-  // };
-
   const dreamChecked = (name: string) => {
     setDreams(
       dreams.map((dream) => {
@@ -26,9 +22,20 @@ export const DreamApp = () => {
     );
   };
 
+  const addDream = (theNewDream: string) => {
+    setDreams([...dreams, new Dream(0, theNewDream, false)]);
+  };
+
   return (
     <>
       <h1>DREAMLOG</h1>
+      <button
+        onClick={() => {
+          addDream("");
+        }}
+      >
+        Add Dream
+      </button>
       {dreams.map((dream) => {
         return (
           <ShowDream

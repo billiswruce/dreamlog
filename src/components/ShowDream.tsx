@@ -12,16 +12,14 @@ export const ShowDream = (props: IShowDreamProps) => {
     props.dreamChecked(props.dream.name);
   };
 
-  const addDream = () => {};
-
   return (
     <>
       <h2>Dreams</h2>
       <h4 className={props.dream.isFulFilled ? "isFulFilled" : ""}>
         {props.dream.name}
       </h4>
-      <button onClick={handleClick}>Dream DONE!</button>
-      <button>Ta bort Dröm</button>
+      <button onClick={handleClick}>Dream DONE</button>
+      <button>Move on!</button>
     </>
   );
 };
