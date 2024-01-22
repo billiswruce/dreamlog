@@ -1,0 +1,22 @@
+.dream-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  gap: 40px;
+}
+
+input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+}
+
+input[type="text"] {
+  width: 210px;
+  height: 28px;
+}
+
+button {
+  margin-left: 10px;
+}

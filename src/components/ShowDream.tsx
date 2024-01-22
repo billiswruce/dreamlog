@@ -1,4 +1,6 @@
+import { ChangeEvent } from "react";
 import { Dream } from "../models/Dream";
+import "./ShowDream.css";
 
 //underkomponent till DreamlogApp.tsx
 //återanvändbar komponent
@@ -8,18 +10,24 @@ interface IShowDreamProps {
 }
 
 export const ShowDream = (props: IShowDreamProps) => {
-  const handleClick = () => {
+  const handleCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
     props.dreamChecked(props.dream.name);
   };
 
   return (
     <>
-      <h2>Dreams</h2>
-      <h4 className={props.dream.isFulFilled ? "isFulFilled" : ""}>
-        {props.dream.name}
-      </h4>
-      <button onClick={handleClick}>Dream DONE</button>
-      <button>Move on!</button>
+      <div className="dream-container">
+        <input
+          type="checkbox"
+          checked={props.dream.isFulFilled}
+          onChange={handleCheckbox}
+        />
+        <h3 className={props.dream.isFulFilled ? "isFulFilled" : ""}>
+          {props.dream.name}
+        </h3>
+
+        <button>Move on!</button>
+      </div>
     </>
   );
 };
