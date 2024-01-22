@@ -8,6 +8,7 @@ export const AddDream = (props: IAddDreamProps) => {
 
   const handleClick = () => {
     props.addDream(newDream);
+    setNewDream("");
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
