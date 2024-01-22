@@ -1,15 +1,14 @@
-import { useState } from "react";
 import { Dream } from "../models/Dream";
 
 //underkomponent till DreamlogApp.tsx
-export const ShowDream = () => {
-  const handleClick = () => {
-    setDream({ ...dream, isfulFilled: false });
-  };
+//återanvändbar komponent
+interface IShowDreamProps {
+  dream: Dream;
+  handleCheckbox: () => void;
+}
 
-  const handleCheckboxChange = () => {
-    setDream({ ...dream, isfulFilled: !dream.isfulFilled });
-  };
+export const ShowDream = (props: IShowDreamProps) => {
+  const handleClick = () => {};
 
   return (
     <>
@@ -17,10 +16,10 @@ export const ShowDream = () => {
       <h4>
         <input
           type="checkbox"
-          checked={dream.isfulFilled}
-          onChange={handleCheckboxChange}
+          checked={props.dream.isfulFilled}
+          onChange={props.handleCheckbox}
         />
-        {dream.name}{" "}
+        {props.dream.name}{" "}
       </h4>
       <button onClick={handleClick}>Remove Dream</button>
       <button>Add New Dream</button>
