@@ -1,10 +1,10 @@
 import "./App.css";
-import { DreamlogApp } from "./components/DreamlogApp";
+import { DreamApp } from "./components/DreamApp";
 
 function App() {
   return (
     <>
-      <DreamlogApp />
+      <DreamApp />
     </>
   );
 }
