@@ -22,6 +22,7 @@ export const ShowDream = (props: IShowDreamProps) => {
           type="checkbox"
           checked={props.dream.isFulFilled}
           onChange={handleCheckbox}
+          className="checkbox"
         />
         <h3 className={props.dream.isFulFilled ? "isFulFilled" : ""}>
           {props.dream.name}
