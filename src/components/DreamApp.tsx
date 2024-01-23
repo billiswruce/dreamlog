@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ShowDream } from "./ShowDream";
 import { Dream } from "../models/Dream";
 import { AddDream } from "./AddDream";
+import "./DreamApp.css";
 
 //MAIN COMPONENT //
 export const DreamApp = () => {

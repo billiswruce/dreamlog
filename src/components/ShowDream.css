@@ -1,10 +1,18 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
 .container {
   border: 8px solid rgb(134, 180, 233);
   background-color: rgb(154, 190, 232);
   /* border: 8px solid rgb(49, 129, 220); */
   padding: 50px 80px;
-  border-radius: 10%;
+  border-radius: 40px;
   margin: 20px 0;
+}
+
+h1 {
+  font-size: 400px;
 }
 
 .dream-container {
@@ -12,14 +20,14 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 5px;
   gap: 40px;
 }
 
 input[type="checkbox"] {
   width: 25px;
   height: 25px;
-  background-color: white !important;
+  background-color: white;
 }
 
 .dream-container input[type="checkbox"]:checked {
