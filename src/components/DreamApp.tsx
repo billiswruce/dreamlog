@@ -1,18 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ShowDream } from "./ShowDream";
 import { Dream } from "../models/Dream";
 import { AddDream } from "./AddDream";
 
 //MAIN COMPONENT //
 export const DreamApp = () => {
-  const [dreams, setDreams] = useState<Dream[]>([
-    new Dream(1, " Bo i Japan", true),
-    new Dream(2, " Bestiga Mt.Fuji", true),
-    new Dream(3, " Tågluff i Europa", false),
-    new Dream(4, " Bli bra på kod", false),
-    new Dream(5, " Lära mig Sticka", false),
-    new Dream(6, " Lära mig Spanska", false),
-  ]);
+  const storeDreams = JSON.parse(localStorage.getItem("dreams") || "[]");
+
+  const listDreams = [
+    new Dream(1, "Bo i Japan", true),
+    new Dream(2, "Bestiga Mt.Fuji", true),
+    new Dream(3, "Tågluff i Europa", false),
+    new Dream(4, "Bli bra på kod", false),
+    new Dream(5, "Lära mig Sticka", false),
+  ];
+
+  const [dreams, setDreams] = useState<Dream[]>(
+    storeDreams.length > 0 ? storeDreams : listDreams
+  );
+
+  useEffect(() => {
+    localStorage.setItem("dreams", JSON.stringify(dreams));
+  }, [dreams]);
 
   const dreamChecked = (name: string) => {
     setDreams(
@@ -27,7 +36,7 @@ export const DreamApp = () => {
   };
 
   const addANewDream = (theNewDream: string) => {
-    setDreams([...dreams, new Dream(0, theNewDream, false)]);
+    setDreams([...dreams, new Dream(dreams.length + 1, theNewDream, false)]);
   };
 
   const removeDream = (name: string) => {
