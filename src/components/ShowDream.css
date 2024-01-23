@@ -1,7 +1,28 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.background {
+  background-image: url("../img/Clouds.svg");
+  background-color: rgb(90, 151, 225);
+  background-size: cover;
+  height: 100%vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 .container {
-  border: 8px solid rgb(49, 129, 220);
-  padding: 50px 80px;
-  border-radius: 10%;
+  border: 8px solid rgb(182, 205, 232);
+  background-color: rgb(236, 241, 247);
+  padding: 0 80px;
+  padding-bottom: 40px;
+  border-radius: 40px;
+  margin: 60px auto;
+  color: rgb(49, 129, 220);
+  width: 30%;
 }
 
 .dream-container {
@@ -9,13 +30,18 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 5px;
   gap: 40px;
 }
 
 input[type="checkbox"] {
   width: 25px;
   height: 25px;
+  background-color: white;
+}
+
+.dream-container input[type="checkbox"]:checked {
+  background-color: rgb(49, 129, 220);
 }
 
 input[type="text"] {
@@ -23,18 +49,30 @@ input[type="text"] {
   height: 28px;
   font-size: large;
   border-radius: 3px;
-  box-shadow: none !important;
+  border: 1px solid rgb(49, 129, 220);
+  box-shadow: none;
+  background: rgb(49, 129, 220);
 }
 
 button {
   margin-left: 10px;
+  color: white;
+  background-color: rgb(49, 129, 220) !important;
 }
 
 .isFulFilled {
   text-decoration: line-through;
+  text-decoration-thickness: 2px;
 }
 
 ul {
   list-style: none;
   padding: 0;
+}
+
+img {
+  width: 90%;
+  display: block;
+  margin: 0px auto;
+  margin-bottom: 20px;
 }
