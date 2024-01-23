@@ -3,7 +3,7 @@ import { ShowDream } from "./ShowDream";
 import { Dream } from "../models/Dream";
 import { AddDream } from "./AddDream";
 
-//MAIN COMPONENT
+//MAIN COMPONENT //
 export const DreamApp = () => {
   const [dreams, setDreams] = useState<Dream[]>([
     new Dream(1, " Bo i Japan", true),
