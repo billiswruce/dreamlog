@@ -27,7 +27,6 @@ export const ShowDream = (props: IShowDreamProps) => {
         <h3 className={props.dream.isFulFilled ? "isFulFilled" : ""}>
           {props.dream.name}
         </h3>
-
         <button onClick={() => props.removeDream(props.dream.name)}>
           Move on!
         </button>
