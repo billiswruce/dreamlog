@@ -1,5 +1,4 @@
 import { ChangeEvent, useState } from "react";
-
 interface IAddDreamProps {
   addDream: (theNewDream: string) => void;
 }
@@ -7,7 +6,7 @@ export const AddDream = (props: IAddDreamProps) => {
   const [newDream, setNewDream] = useState("");
 
   const handleClick = () => {
-    props.addDream(newDream);
+    if (newDream.trim() !== "") props.addDream(newDream);
     setNewDream("");
   };
 
@@ -17,8 +16,15 @@ export const AddDream = (props: IAddDreamProps) => {
 
   return (
     <>
-      <input type="text" value={newDream} onChange={handleChange} />
-      <button onClick={handleClick}>Add new Dream</button>
+      <div className="input-btn-container">
+        <input
+          type="text"
+          placeholder="Next Dream?"
+          value={newDream}
+          onChange={handleChange}
+        />
+        <button onClick={handleClick}>Add</button>
+      </div>
     </>
   );
 };
