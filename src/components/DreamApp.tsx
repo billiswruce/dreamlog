@@ -4,7 +4,6 @@ import { Dream } from "../models/Dream";
 import { AddDream } from "./AddDream";
 import "./DreamApp.css";
 import Dreamlog from "../img/Dreamlog.svg";
-import Cloudsbg from "../img/Clouds.svg";
 
 //MAIN COMPONENT //
 export const DreamApp = () => {
