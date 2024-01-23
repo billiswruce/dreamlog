@@ -2,17 +2,27 @@
   font-family: "Poppins", sans-serif;
 }
 
-.container {
-  border: 8px solid rgb(134, 180, 233);
-  background-color: rgb(154, 190, 232);
-  /* border: 8px solid rgb(49, 129, 220); */
-  padding: 50px 80px;
-  border-radius: 40px;
-  margin: 20px 0;
+.background {
+  background-image: url("../img/Clouds.svg");
+  background-color: rgb(90, 151, 225);
+  background-size: cover;
+  height: 100%vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
-h1 {
-  font-size: 400px;
+.container {
+  border: 8px solid rgb(182, 205, 232);
+  background-color: rgb(236, 241, 247);
+  padding: 0 80px;
+  padding-bottom: 40px;
+  border-radius: 40px;
+  margin: 60px auto;
+  color: rgb(49, 129, 220);
+  width: 30%;
 }
 
 .dream-container {
@@ -52,11 +62,17 @@ button {
 
 .isFulFilled {
   text-decoration: line-through;
-  /* text-decoration-color: rgb(49, 129, 220); */
   text-decoration-thickness: 2px;
 }
 
 ul {
   list-style: none;
   padding: 0;
+}
+
+img {
+  width: 90%;
+  display: block;
+  margin: 0px auto;
+  margin-bottom: 20px;
 }

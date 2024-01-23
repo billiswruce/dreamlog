@@ -3,6 +3,8 @@ import { ShowDream } from "./ShowDream";
 import { Dream } from "../models/Dream";
 import { AddDream } from "./AddDream";
 import "./DreamApp.css";
+import Dreamlog from "../img/Dreamlog.svg";
+import Cloudsbg from "../img/Clouds.svg";
 
 //MAIN COMPONENT //
 export const DreamApp = () => {
@@ -47,20 +49,22 @@ export const DreamApp = () => {
   return (
     <>
       {" "}
-      <div className="container">
-        <h1>DREAMLOG</h1>
-        <AddDream addDream={addANewDream} />
-        <ul>
-          {dreams.map((dream) => (
-            <li key={dream.name}>
-              <ShowDream
-                dreamChecked={dreamChecked}
-                dream={dream}
-                removeDream={removeDream}
-              />
-            </li>
-          ))}
-        </ul>
+      <div className="background">
+        <div className="container">
+          <img src={Dreamlog} alt="Dreamlog Logo" className="logo" />
+          <AddDream addDream={addANewDream} />
+          <ul>
+            {dreams.map((dream) => (
+              <li key={dream.name}>
+                <ShowDream
+                  dreamChecked={dreamChecked}
+                  dream={dream}
+                  removeDream={removeDream}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </>
   );
