@@ -9,11 +9,10 @@ import { v4 as uuidv4 } from "uuid";
 
 export const DreamApp = () => {
   const hardCodedValues = [
-    new Dream(uuidv4(), "Bo i Japan", true),
-    new Dream(uuidv4(), "Bestiga Mt.Fuji", true),
-    new Dream(uuidv4(), "Äta 100 Semlor", false),
-    new Dream(uuidv4(), "Bli bra på kod", false),
-    new Dream(uuidv4(), "Lära mig Sticka", false),
+    new Dream(uuidv4(), "Climb Mt.Fuji", true),
+    new Dream(uuidv4(), "Eat 100 Semlas", false),
+    new Dream(uuidv4(), "Become a great coder", false),
+    new Dream(uuidv4(), "Learn how to knit", false),
   ];
 
   const [dreams, setDreams] = useState<Dream[]>(
