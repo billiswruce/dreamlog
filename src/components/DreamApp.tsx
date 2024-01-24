@@ -1,28 +1,26 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ShowDream } from "./ShowDream";
 import { Dream } from "../models/Dream";
 import { AddDream } from "./AddDream";
 import Dreamlog from "../img/Dreamlog.svg";
+import { v4 as uuidv4 } from "uuid";
 
 //MAIN COMPONENT //
-export const DreamApp = () => {
-  const storeDreams = JSON.parse(localStorage.getItem("dreams") || "[]");
 
-  const listDreams = [
-    new Dream(1, "Bo i Japan", true),
-    new Dream(2, "Bestiga Mt.Fuji", true),
-    new Dream(3, "Tågluff i Europa", false),
-    new Dream(4, "Bli bra på kod", false),
-    new Dream(5, "Lära mig Sticka", false),
+export const DreamApp = () => {
+  const hardCodedValues = [
+    new Dream(uuidv4(), "Bo i Japan", true),
+    new Dream(uuidv4(), "Bestiga Mt.Fuji", true),
+    new Dream(uuidv4(), "Tågluff i Europa", false),
+    new Dream(uuidv4(), "Bli bra på kod", false),
+    new Dream(uuidv4(), "Lära mig Sticka", false),
   ];
 
   const [dreams, setDreams] = useState<Dream[]>(
-    storeDreams.length > 0 ? storeDreams : listDreams
+    JSON.parse(
+      localStorage.getItem("dreams") || JSON.stringify(hardCodedValues)
+    )
   );
-
-  useEffect(() => {
-    localStorage.setItem("dreams", JSON.stringify(dreams));
-  }, [dreams]);
 
   const dreamChecked = (name: string) => {
     setDreams(
@@ -37,7 +35,13 @@ export const DreamApp = () => {
   };
 
   const addANewDream = (theNewDream: string) => {
-    setDreams([...dreams, new Dream(dreams.length + 1, theNewDream, false)]);
+    const newId = uuidv4();
+    setDreams([...dreams, new Dream(newId, theNewDream, false)]);
+
+    localStorage.setItem(
+      "dreams",
+      JSON.stringify([...dreams, new Dream(newId, theNewDream, false)])
+    );
   };
 
   const removeDream = (name: string) => {
