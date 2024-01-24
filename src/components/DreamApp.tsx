@@ -5,10 +5,9 @@ import { AddDream } from "./AddDream";
 import Dreamlog from "../img/Dreamlog.svg";
 
 //MAIN COMPONENT //
-export const DreamApp = () => {
-  const storeDreams = JSON.parse(localStorage.getItem("dreams") || "[]");
 
-  const listDreams = [
+export const DreamApp = () => {
+  const hardCodedValues = [
     new Dream(1, "Bo i Japan", true),
     new Dream(2, "Bestiga Mt.Fuji", true),
     new Dream(3, "Tågluff i Europa", false),
@@ -17,12 +16,10 @@ export const DreamApp = () => {
   ];
 
   const [dreams, setDreams] = useState<Dream[]>(
-    storeDreams.length > 0 ? storeDreams : listDreams
+    JSON.parse(
+      localStorage.getItem("dreams") || JSON.stringify(hardCodedValues)
+    )
   );
-
-  useEffect(() => {
-    localStorage.setItem("dreams", JSON.stringify(dreams));
-  }, [dreams]);
 
   const dreamChecked = (name: string) => {
     setDreams(
@@ -37,7 +34,15 @@ export const DreamApp = () => {
   };
 
   const addANewDream = (theNewDream: string) => {
-    setDreams([...dreams, new Dream(dreams.length + 1, theNewDream, false)]);
+    setDreams([...dreams, new Dream(Dream.length + 1, theNewDream, false)]);
+
+    localStorage.setItem(
+      "dreams",
+      JSON.stringify([
+        ...dreams,
+        new Dream(dreams.length + 1, theNewDream, false),
+      ])
+    );
   };
 
   const removeDream = (name: string) => {
