@@ -11,7 +11,7 @@ export const DreamApp = () => {
   const hardCodedValues = [
     new Dream(uuidv4(), "Bo i Japan", true),
     new Dream(uuidv4(), "Bestiga Mt.Fuji", true),
-    new Dream(uuidv4(), "Tågluff i Europa", false),
+    new Dream(uuidv4(), "Äta 100 Semlor", false),
     new Dream(uuidv4(), "Bli bra på kod", false),
     new Dream(uuidv4(), "Lära mig Sticka", false),
   ];
@@ -23,15 +23,23 @@ export const DreamApp = () => {
   );
 
   const dreamChecked = (name: string) => {
-    setDreams(
-      dreams.map((dream) => {
+    setDreams((prevDreams) => {
+      const updatedDreams = prevDreams.map((dream) => {
         if (dream.name === name) {
-          return { ...dream, isFulFilled: !dream.isFulFilled };
+          const updatedDream = { ...dream, isFulFilled: !dream.isFulFilled };
+          return updatedDream;
         } else {
           return dream;
         }
-      })
-    );
+      });
+
+      updateLocalStorage(updatedDreams);
+      return updatedDreams;
+    });
+  };
+
+  const updateLocalStorage = (dreams: Dream[]) => {
+    localStorage.setItem("dreams", JSON.stringify(dreams));
   };
 
   const addANewDream = (theNewDream: string) => {
@@ -45,18 +53,31 @@ export const DreamApp = () => {
   };
 
   const removeDream = (name: string) => {
-    setDreams(dreams.filter((dream) => dream.name !== name));
+    setDreams([...dreams.filter((dream) => dream.name !== name)]);
+    localStorage.setItem(
+      "dreams",
+      JSON.stringify([...dreams].filter((dream) => dream.name !== name))
+    );
   };
+
+  const sortedDreams = dreams.slice().sort((a, b) => {
+    if (a.isFulFilled && !b.isFulFilled) {
+      return -1;
+    } else if (!a.isFulFilled && b.isFulFilled) {
+      return 1;
+    } else {
+      return a.name.localeCompare(b.name);
+    }
+  });
 
   return (
     <>
-      {" "}
       <div className="background">
         <div className="container">
           <img src={Dreamlog} alt="Dreamlog Logo" className="logo" />
           <AddDream addDream={addANewDream} />
           <ul>
-            {dreams.map((dream) => (
+            {sortedDreams.map((dream) => (
               <li key={dream.name}>
                 <ShowDream
                   dreamChecked={dreamChecked}
