@@ -63,11 +63,8 @@ export const DreamApp = () => {
   const sortedDreams = dreams.slice().sort((a, b) => {
     if (a.isFulFilled && !b.isFulFilled) {
       return -1;
-    } else if (!a.isFulFilled && b.isFulFilled) {
-      return 1;
-    } else {
-      return a.name.localeCompare(b.name);
-    }
+    } else !a.isFulFilled && b.isFulFilled;
+    return 1;
   });
 
   return (
