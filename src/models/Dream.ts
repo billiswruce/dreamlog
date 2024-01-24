@@ -1,6 +1,6 @@
 export class Dream {
   constructor(
-    public id: number,
+    public id: string,
     public name: string,
     public isFulFilled: boolean
   ) {}
