@@ -16,15 +16,17 @@ export const AddDream = (props: IAddDreamProps) => {
 
   return (
     <>
-      <div className="input-btn-container">
-        <input
-          type="text"
-          placeholder="Next Dream?"
-          value={newDream}
-          onChange={handleChange}
-        />
-        <button onClick={handleClick}>Add</button>
-      </div>
+      <form>
+        <div className="input-btn-container">
+          <input
+            type="text"
+            placeholder="Next Dream?"
+            value={newDream}
+            onChange={handleChange}
+          />
+          <button onClick={handleClick}>Add</button>
+        </div>
+      </form>
     </>
   );
 };
