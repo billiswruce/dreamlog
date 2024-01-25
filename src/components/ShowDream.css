@@ -76,17 +76,6 @@ input[type="checkbox"] {
   min-height: 25px;
 }
 
-/* input[type="checkbox"]::hover {
-  content: ""; 
-  /*position: absolute;
-  background-color: white;
-  border: 2px solid rgb(123, 168, 221); 
-  cursor: pointer; /*
-} 
-/* input[type="checkbox"]:checked::before {
-  background-color: rgb(49, 129, 220);
-}  */
-
 .isFulFilled {
   text-decoration: line-through;
   text-decoration-thickness: 2px;
@@ -98,6 +87,5 @@ ul {
 }
 
 img {
-  width: 90%; /* Anpassa bredden efter dina behov */
-  /* margin: 20px auto; */
+  width: 90%;
 }

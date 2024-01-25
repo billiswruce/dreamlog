@@ -1,9 +1,6 @@
-import { ChangeEvent } from "react";
 import { Dream } from "../models/Dream";
 import "./ShowDream.css";
 
-//underkomponent till DreamlogApp.tsx
-//återanvändbar komponent
 interface IShowDreamProps {
   dream: Dream;
   dreamChecked: (name: string) => void;
@@ -11,7 +8,7 @@ interface IShowDreamProps {
 }
 
 export const ShowDream = (props: IShowDreamProps) => {
-  const handleCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleCheckbox = () => {
     props.dreamChecked(props.dream.name);
   };
 

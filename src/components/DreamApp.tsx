@@ -5,13 +5,11 @@ import { AddDream } from "./AddDream";
 import Dreamlog from "../img/Dreamlog.svg";
 import { v4 as uuidv4 } from "uuid";
 
-//MAIN COMPONENT //
-
 export const DreamApp = () => {
   const hardCodedValues = [
     new Dream(uuidv4(), "Climb Mt.Fuji", true),
     new Dream(uuidv4(), "Eat 100 Semlas", false),
-    new Dream(uuidv4(), "Become a great coder", false),
+    new Dream(uuidv4(), "Master coding", false),
     new Dream(uuidv4(), "Learn how to knit", false),
   ];
 
@@ -62,8 +60,11 @@ export const DreamApp = () => {
   const sortedDreams = dreams.slice().sort((a, b) => {
     if (a.isFulFilled && !b.isFulFilled) {
       return -1;
-    } else !a.isFulFilled && b.isFulFilled;
-    return 1;
+    } else if (!a.isFulFilled && b.isFulFilled) {
+      return 1;
+    }
+
+    return a.name.localeCompare(b.name);
   });
 
   return (
