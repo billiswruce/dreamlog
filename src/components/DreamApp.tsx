@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 export const DreamApp = () => {
   const hardCodedValues = [
     new Dream(uuidv4(), "Climb Mt.Fuji", true),
-    new Dream(uuidv4(), "Eat 100 Semlas", false),
+    new Dream(uuidv4(), "Eat 1000 Semlas", true),
     new Dream(uuidv4(), "Master coding", false),
     new Dream(uuidv4(), "Learn how to knit", false),
   ];
