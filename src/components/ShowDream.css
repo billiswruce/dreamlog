@@ -74,6 +74,7 @@ input[type="checkbox"] {
   background-color: white;
   min-width: 25px;
   min-height: 25px;
+  accent-color: rgb(49, 129, 220);
 }
 
 .isFulFilled {
