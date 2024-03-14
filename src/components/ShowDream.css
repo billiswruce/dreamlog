@@ -1,0 +1,92 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.background {
+  background-image: url("../img/Clouds.svg");
+  background-color: rgb(104, 156, 219);
+  background-size: cover;
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 8px solid rgb(182, 205, 232);
+  background-color: rgb(236, 241, 247);
+  padding: 0 40px;
+  padding-bottom: 30px;
+  border-radius: 40px;
+  margin: 130px auto;
+  color: rgb(49, 129, 220);
+  max-width: 37%;
+}
+
+.dream-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-top: 5px;
+  gap: 40px;
+}
+
+input[type="text"] {
+  height: 28px;
+  font-size: medium;
+  border-radius: 3px;
+  border: 1px solid rgb(49, 129, 220);
+  box-shadow: none;
+  background: rgb(49, 129, 220);
+  color: white;
+  padding-left: 10px;
+}
+
+.input-btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-top: 5px;
+  gap: 50px;
+}
+
+button {
+  color: white;
+  background-color: rgb(49, 129, 220) !important;
+  max-height: 35px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="text"]::placeholder {
+  color: white;
+}
+
+input[type="checkbox"] {
+  background-color: white;
+  min-width: 25px;
+  min-height: 25px;
+  accent-color: rgb(49, 129, 220);
+}
+
+.isFulFilled {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  width: 90%;
+}

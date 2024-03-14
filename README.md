@@ -1,5 +1,6 @@
-# Todos
+<img width="1667" alt="Skärmavbild 2024-03-14 kl  10 36 13" src="https://github.com/billiswruce/dreamlog/assets/98770226/f59e82ce-4dbb-46c4-a9b4-1431b45df030">
 
+#Todos
 En inlämningsuppgift för FSU23D. I denna uppgift skall ni alltså bygga en todo-lista i react. Ni har fått detta projekt som mall så att alla har någonting att utgå ifrån. Men, ingenting mer än själva projektet har gjorts. Nu skall ni, genom att använda alla koncept vi har pratat om hittills i kursen, skapa en todo-lista.
 
 ## Krav för G
