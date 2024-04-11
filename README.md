@@ -1,4 +1,4 @@
-<img width="850" alt="Skärmavbild 2024-04-11 kl  15 51 24" src="https://github.com/billiswruce/dreamlog/assets/98770226/c8703a07-cf4a-4647-9de3-0fb72db085ea">
+<img width="832" alt="Skärmavbild 2024-04-11 kl  15 51 24" src="https://github.com/billiswruce/dreamlog/assets/98770226/172a6b12-5155-472e-bd87-5f4b07021f4e">
 
 # Todos
 
