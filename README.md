@@ -6,8 +6,8 @@ In this school assignment, we built a todo list in React.
 ## Requirements
 - Create a hardcoded list with custom todos
 - Present the list on the screen with control, perhaps using a ul/li
-- Able to remove a todo from the list
+- Ability to remove a todo from the list
 - Use at least one component
-- Use localStorage to save the list.
-- Maintain good structure in our code. Meaning self-explanatory variable names and function names, and no comments.
+- LocalStorage to save the list.
+- Maintain good structure in code. Meaning self-explanatory variable names and function names, and no comments.
 
