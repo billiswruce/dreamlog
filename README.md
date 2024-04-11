@@ -1,6 +1,7 @@
-![Screenshot 2024-03-14 at 10.36.13](https://github.com/billiswruce/dreamlog/assets/98770226/f59e82ce-4dbb-46c4-a9b4-1431b45df030)
+<img width="850" alt="Skärmavbild 2024-04-11 kl  15 51 24" src="https://github.com/billiswruce/dreamlog/assets/98770226/c8703a07-cf4a-4647-9de3-0fb72db085ea">
 
 # Todos
+
 In this school assignment, we built a todo list in React. 
 
 ## Requirements
